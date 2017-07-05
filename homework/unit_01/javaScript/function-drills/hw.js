@@ -219,8 +219,11 @@ var noneHaveTwoOrMoreVowels = function (words) {
 // e.g. given ['cat', 'horse', 'elephant'],
 //      return { cat: 3, horse: 5, elephant: 8}
 var buildObjectFromWords = function (words) {
-  var wordObject = {};
-  
+  var wordObject = new object{};
+  for(var i = 0; i < words.length, i++){
+    wordObject[words[i]] = words[i].length;
+  }
+  return wordObject;
 };
 
 
