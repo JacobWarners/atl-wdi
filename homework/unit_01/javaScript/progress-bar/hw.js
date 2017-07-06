@@ -7,7 +7,8 @@ var timerUI = {
     document.getElementById("numeric-display").textContent = timerValue;
   },
   drawProgressBars: function(timerValue){
-    // Your Code Here
+    // var size = 100-timerValue;
+    // document.getElementById("progress-bar").style.width = size;
   },
   drawLitFuses: function(timerValue){
     // Your Code Here
