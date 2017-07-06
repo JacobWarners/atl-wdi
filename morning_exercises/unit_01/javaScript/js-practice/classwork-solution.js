@@ -47,7 +47,7 @@ while (resSeven > 105 || resSeven < 95) {
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
-var resEight;
+var resEight = 0;
 resEight = 0;
 for (var i = 0; i <= 1856; i++) { // or i < 1857
   resEight += i;
@@ -56,7 +56,7 @@ for (var i = 0; i <= 1856; i++) { // or i < 1857
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
-var resNine;
+var resNine = 0;
 resNine = 0;
 for (var i = 0; i < 1000; i++) {
   if (i%7 === 0) {
@@ -65,7 +65,7 @@ for (var i = 0; i < 1000; i++) {
 }
 
 // 10. For numbers 1-10, calculate n^n and then store the sum of all of these // values in the variable `resTen`.
-var resTen;
+var resTen = 0;
 resTen = 0;
 for (var i = 1; i <= 10; i++) {
   var product = 1;
@@ -88,3 +88,10 @@ module.exports = {
   nine: resNine,
   ten: resTen
 }
+
+
+console.log(resSix);
+console.log(resSeven);
+console.log(resEight);
+console.log(resNine);
+console.log(resTen);

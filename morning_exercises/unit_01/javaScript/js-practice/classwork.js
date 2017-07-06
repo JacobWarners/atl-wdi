@@ -27,7 +27,7 @@ var resFive = true;
 
 // 6. Write a `while` loop that increases `resSix` by 23 until `resSix` is five
 //    digits long. (Hint: take a look at the .toString() method)
-var resSix;
+var resSix = 0;
 while(resSix.toString().length < 5){
   resSix += 23;
 }
@@ -35,7 +35,7 @@ while(resSix.toString().length < 5){
 // 7. Write a `while` loop that increases `resSeven` by 12 when it's strictly
 //    below 95, decreases it by 7 when it's strictly above 105, and stops as
 //    soon as `resSeven` equals or falls between those two values.
-var resSeven;
+var resSeven = 0;
 while(resSeven < 95 || resSeven > 105){
   if(resSeven < 95){
     resSeven += 12;
@@ -48,7 +48,7 @@ while(resSeven < 95 || resSeven > 105){
 // 8. Write a `for` loop that counts from 0 (inclusive) to 1857 (exclusive) and
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
-var resEight;
+var resEight = 0;
   for(var i = 0; i < 1857; i++){
     resEight += i;
   }
@@ -56,13 +56,13 @@ var resEight;
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
-var resNine;
+var resNine = 0;
 for(var i = 0; i < 1000; i += 7){
   resNine +=  i;
 }
 
 // 10. For numbers 1-10, calculate n^n and then store the sum of all of these values in the variable `resTen`.
-var resTen;
+var resTen = 0;
 for(var n= 1; n <= 10; n++){
   resTen += Math.pow(n, n);
 }
@@ -80,3 +80,10 @@ module.exports = {
   nine: resNine,
   ten: resTen
 }
+
+
+console.log(resSix);
+console.log(resSeven);
+console.log(resEight);
+console.log(resNine);
+console.log(resTen);

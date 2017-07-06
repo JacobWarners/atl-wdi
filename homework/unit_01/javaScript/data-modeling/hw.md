@@ -60,13 +60,46 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+```js
+var projects = {
+  taskName: "Name",
+  taskDescription: "Some string describing the task",
+  taskDateStarted: "date",
+  taskDueDate: "date",
+  taskCompletionDate: null or "date"
+  taskToDo: [Array of objects that are steps to complete. each has a name, a start time, description, and a due date],
+}
+```
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+```js
+var user {
+  username: "name"
+  password: "password"
+  joinDate: "date"
+  securityAnswer: "some answer"
+  albums: [{Any Album}, {Another Album}, {Uncategorized Album}, {All}]
+  friendsList: [{friend}]
+}
+
+var album {
+  name: "name of album"
+  dateCreated: "date"
+  decription: "description of album"
+  location: "if such a thing is needed"
+  cover: {picture}
+}
+
+var picture{
+  name: "name"
+  description: "description"
+  source: "/user/images/blahblahblah"
+  likes: number //cause its all about internet points
+}
+```
 
 ### 3. Home Automation Manager
 
@@ -75,7 +108,25 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+```js
+var home {
+  houseNumber: 512
+  streetName: "E Main St"
+  city: "Newellville"
+  state: PA
+  zip: 12345
+  internalMonitors: [{thermostat}, {lights}, [sprinkers]]
+}
+var thermostat {
+  currentTemp = 73;
+  minTemp = 73;
+  maxTemp = 75;
+  nightMinTemp = 70;
+  nightMaxTemp = 73;
+  dayTimeStart = "7:00am"
+  nightTimeStart = "10:00pm"
+}
+```
 
 ### 4. Sneaker Store
 
@@ -83,7 +134,26 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+```js
+var products {
+  brand;
+  color;
+  model;
+  size;
+  price;
+  //if we want more information for the seller
+  cost;
+  vendor;
+  damage-disposition;
+}
+
+var cart {
+  itemsInCart: [],
+  taxes; function();
+  total;
+  date;
+}
+```
 
 ## Representing Abstractions in Code
 
@@ -139,7 +209,7 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+> An Advantage is that you could fairly easily return a string that gives the description of the place. A big disadvantage would be that there is no easy way to return a string that contains all the stops. It would also then be difficult to return what the next stop will be, or what the last stop was.
 
 ### 6. Doctor Appointment App
 
@@ -242,7 +312,7 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+> The first option would make it easier to create a list of all a doctors appointments by calling doctor.appointments. Option two makes it easier to view individual appoints and dig into their properties easier. I think option 1 is formatted better to be more usable in our program.
 
 ## Tying It Together
 
@@ -253,13 +323,26 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+  > Depending on how in depth we want to make this game we could make a entity to model the player with their win lose ratio, username. We would also want to use something to model the board and whether or not it is an X or and O.
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+```js
+  var user {
+    username: "name",
+    password: "password",
+    totalWins: number,
+    totalGamesPlayed: number,
+    dateJoined: "date"
+  }
 
+  var board {
+    rowOne: [" ", "x", "o"];
+    rowTwo: [" ", "o", "x"];
+    rowThree ["o", "x", " "];
+  }
+```
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+  > I think that it would be interesting for the player to see how much they have played. Achieving a ratio over 50% is a goal for players. Using an object to represent the board is the closest thing I can think of to a two dimentional array in javascript.
