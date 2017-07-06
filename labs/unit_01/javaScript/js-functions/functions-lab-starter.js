@@ -61,9 +61,8 @@ var numberOfArguments = function(){
 
 
 // Question 6
-var reverseString = function (string){
-    var newString = string;
-  return newString.split('').reverse.join('');
+var reverseString = function(string){
+  return string.split('').reverse().join('');
 };
 
 
