@@ -24,10 +24,15 @@ window.onload = function (event) {
 var rollDice = {
 
     roll: function rollDice() {
-        var diceOne = Math.floor(Math.random() * 6);
-        var diceTwo = Math.floor(Math.random() * 6);
+        var diceOne = Math.floor(Math.random() * 6)+1;
+        var diceTwo = Math.floor(Math.random() * 6)+1;
         console.log(diceOne);
         console.log(diceTwo);
 
+        var diceImageOne = document.getElementById("first-die");
+        var diceImageTwo = document.getElementById("second-die");
+
+        diceImageOne.className = "dice dice-"+diceOne;
+        diceImageTwo.className = "dice dice-"+diceTwo;
     }
 }
