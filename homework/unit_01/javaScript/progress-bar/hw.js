@@ -6,7 +6,7 @@ var timerUI = {
   drawNumericDisplay: function (timerValue) {
     if (timerValue <= 10) {
       document.getElementById("numeric-display").style.color = "red";
-      document.getElementById("numeric-display").style.fontSize = 24 + timerValue+"px";
+      document.getElementById("numeric-display").style.fontSize = 24+(1.05*(10-timerValue)) +"px";
     }
     document.getElementById("numeric-display").textContent = timerValue;
   },
