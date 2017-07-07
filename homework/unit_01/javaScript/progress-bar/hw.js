@@ -3,17 +3,24 @@
 // See LICENSE for details.
 
 var timerUI = {
-  drawNumericDisplay: function(timerValue){
+  drawNumericDisplay: function (timerValue) {
+    if (timerValue <= 10) {
+      document.getElementById("numeric-display").style.color = "red";
+      document.getElementById("numeric-display").style.fontSize = 24 + timerValue;
+    }
     document.getElementById("numeric-display").textContent = timerValue;
   },
-  drawProgressBars: function(timerValue){
-    // var size = 100-timerValue;
-    // document.getElementById("progress-bar").style.width = size;
+  drawProgressBars: function (timerValue) {
+    var size = 100 - timerValue;
+    document.getElementById("progress-bar").style.width = size + "%";
   },
-  drawLitFuses: function(timerValue){
-    // Your Code Here
+  drawLitFuses: function (timerValue) {
+    var size = (.98 * timerValue);
+    var burntSize = 98 - size;
+    document.getElementById("unburnt").style.width = size + "%";
+    document.getElementById("burnt").style.width = burntSize + "%";
   },
-  drawCrawlers: function(timerValue){
+  drawCrawlers: function (timerValue) {
     // Your Code Here
   }
 };
