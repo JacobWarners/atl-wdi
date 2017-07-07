@@ -12,22 +12,25 @@ var timerUI = {
   },
   drawProgressBars: function (timerValue) {
     var size = 100 - timerValue;
-    document.getElementById("progress-bar").style.width = size + "%";
+    document.getElementsByClassName("progress-bar")[0].style.width = size + "%";
   },
   drawLitFuses: function (timerValue) {
     var size = (.98 * timerValue);
     var burntSize = 98 - size;
-    document.getElementById("unburnt").style.width = size + "%";
-    document.getElementById("burnt").style.width = burntSize + "%";
+    document.getElementsByClassName("unburnt")[0].style.width = size + "%";
+    document.getElementsByClassName("burnt")[0].style.width = burntSize + "%";
   },
   drawCrawlers: function (timerValue) {
     var position = 100 - timerValue;
     if(timerValue % 2 === 1){
-      document.getElementById("crawler").style.marginTop = "10px";
+      document.getElementsByClassName("crawler")[0].style.marginTop = "10px";
+      document.getElementsByClassName("crawler")[1].style.marginTop = "10px";
     }
     if(timerValue % 2 === 0){
-      document.getElementById("crawler").style.marginTop = "0px";
+      document.getElementsByClassName("crawler")[0].style.marginTop = "0px";
+      document.getElementsByClassName("crawler")[1].style.marginTop = "0px";
     }
-    document.getElementById("crawler").style.marginLeft = 10*position+"px";
+    document.getElementsByClassName("crawler")[0].style.marginLeft = 10*position+"px";
+    document.getElementsByClassName("crawler")[1].style.marginLeft = 10*position+"px";
   }
 };
