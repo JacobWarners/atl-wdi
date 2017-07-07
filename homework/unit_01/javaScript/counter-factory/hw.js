@@ -64,7 +64,14 @@ const Presenter = {
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-    // Your Code Here
+    console.log("create new counter")
+    var newCounter = document.createElement("div");
+    var appendTo = document.getElementById("counter-list");
+    newCounter.innerHTML = "<h3>Count: <span>0</span></h3> <button class='increment'> + 1 </button>"
+    newCounter.className = "counter";
+    newCounter.setAttribute("data-index", "2");
+
+    appendTo.appendChild(newCounter);
   },
   onClickIncrement: function(event){
     // Your Code Here
