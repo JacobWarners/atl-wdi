@@ -65,15 +65,3 @@ See LICENSE for details.
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-
-#progress-bar {
-  width: 100%;
-}
-
-#unburnt {
-  width: 98%;
-}
-
-#burnt {
-  width: 0%;
-}

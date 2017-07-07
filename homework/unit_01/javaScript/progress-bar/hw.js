@@ -6,7 +6,7 @@ var timerUI = {
   drawNumericDisplay: function (timerValue) {
     if (timerValue <= 10) {
       document.getElementById("numeric-display").style.color = "red";
-      document.getElementById("numeric-display").style.fontSize = 24 + timerValue;
+      document.getElementById("numeric-display").style.fontSize = 24 + timerValue+"px";
     }
     document.getElementById("numeric-display").textContent = timerValue;
   },
@@ -21,6 +21,13 @@ var timerUI = {
     document.getElementById("burnt").style.width = burntSize + "%";
   },
   drawCrawlers: function (timerValue) {
-    // Your Code Here
+    var position = 100 - timerValue;
+    if(timerValue % 2 === 1){
+      document.getElementById("crawler").style.marginTop = "10px";
+    }
+    if(timerValue % 2 === 0){
+      document.getElementById("crawler").style.marginTop = "0px";
+    }
+    document.getElementById("crawler").style.marginLeft = 10*position+"px";
   }
 };
