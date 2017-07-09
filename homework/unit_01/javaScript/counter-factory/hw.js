@@ -60,7 +60,7 @@ const Presenter = {
     newCounter.getElementsByClassName("increment")[0].onclick = AppController.onClickIncrement;
   },
   refreshCounterComponent: function(countId){
-    console.log(`refresh counter component #${countId}`);
+    //console.log(`refresh counter component #${countId}`);
     document.getElementsByClassName("counter")[countId].getElementsByTagName("span")[0].innerHTML = CounterCollection.getCounterValue(countId);
   },
   removeCounterComponent: function(countId){             // REACH
