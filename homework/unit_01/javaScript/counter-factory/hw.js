@@ -77,8 +77,8 @@ const AppController = {
   },
   onClickIncrement: function(event){
     let countId = Number(event.target.parentNode.getAttribute("data-index"));
-    Presenter.refreshCounterComponent(countId);
     CounterCollection.incrementCounter(countId);
+    Presenter.refreshCounterComponent(countId);
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
