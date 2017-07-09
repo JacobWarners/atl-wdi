@@ -52,14 +52,14 @@ const Presenter = {
     var newCounter = document.createElement("div");
     var appendTo = document.getElementById("counter-list");
 
-    newCounter.innerHTML = "<h3>Count: <span>0</span></h3> <button class='increment'> + 1 </button>"
+    newCounter.innerHTML = "<h3>Count: <span>0</span></h3> <button class='increment'> + 1 </button>";
     newCounter.className = "counter";
     CounterCollection.counters.push(newCounter);
     newCounter.setAttribute("data-index", CounterCollection.counters.length-1);
     newCounter.count = 0;
 
     appendTo.appendChild(newCounter);
-    //newCounter.lastChild.addEventListener("click", AppController.onClickIncrement(this));
+    newCounter.getElementsByClassName("increment")[0].onclick = AppController.onClickIncrement;
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
@@ -75,13 +75,10 @@ const Presenter = {
 const AppController = {
   onClickNewCounter: function(event){
     CounterCollection.createCounter();
-    Presenter.insertCounterComponent();
+    Presenter.insertCounterComponent(CounterCollection.lastCountId);
   },
   onClickIncrement: function(event){
-    let counterToIncrement = CounterCollection.counters[this.getAttribute("data-id")];
-    console.log(this);
-    counterToIncrement.count += 1;
-    console.log(counterToIncrement.count);
+    console.log("click");
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
