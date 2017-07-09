@@ -48,7 +48,7 @@ const CounterCollection = {
 // UI //
 const Presenter = {
   insertCounterComponent: function(newCountId){
-    console.log(`insert counter component #${newCountId}`);
+    //console.log(`insert counter component #${newCountId}`);
     var newCounter = document.createElement("div");
     var appendTo = document.getElementById("counter-list");
 
@@ -63,7 +63,7 @@ const Presenter = {
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
-    // Your Code Here
+    console.log(this);
   },
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
@@ -79,6 +79,8 @@ const AppController = {
   },
   onClickIncrement: function(event){
     console.log("click");
+    Presenter.refreshCounterComponent(this);
+    CounterCollection.incrementCounter(this);
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
