@@ -49,7 +49,17 @@ const CounterCollection = {
 const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
-    // Your Code Here
+    var newCounter = document.createElement("div");
+    var appendTo = document.getElementById("counter-list");
+
+    newCounter.innerHTML = "<h3>Count: <span>0</span></h3> <button class='increment'> + 1 </button>"
+    newCounter.className = "counter";
+    CounterCollection.counters.push(newCounter);
+    newCounter.setAttribute("data-index", CounterCollection.counters.length-1);
+    newCounter.count = 0;
+
+    appendTo.appendChild(newCounter);
+    //newCounter.lastChild.addEventListener("click", AppController.onClickIncrement(this));
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
@@ -64,17 +74,14 @@ const Presenter = {
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-    console.log("create new counter")
-    var newCounter = document.createElement("div");
-    var appendTo = document.getElementById("counter-list");
-    newCounter.innerHTML = "<h3>Count: <span>0</span></h3> <button class='increment'> + 1 </button>"
-    newCounter.className = "counter";
-    newCounter.setAttribute("data-index", "2");
-
-    appendTo.appendChild(newCounter);
+    CounterCollection.createCounter();
+    Presenter.insertCounterComponent();
   },
   onClickIncrement: function(event){
-    // Your Code Here
+    let counterToIncrement = CounterCollection.counters[this.getAttribute("data-id")];
+    console.log(this);
+    counterToIncrement.count += 1;
+    console.log(counterToIncrement.count);
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
