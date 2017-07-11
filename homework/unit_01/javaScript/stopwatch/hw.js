@@ -53,22 +53,23 @@ const Stopwatch = {
     var milsec = "";
     //console.log(Stopwatch.mins+":"+Stopwatch.secs+":"+Stopwatch.millisecs);
     if(Stopwatch.mins > 9){
-      min = toString(Stopwatch.mins);
+      min = Stopwatch.mins;
     } else {
-      min = "0"+toString(Stopwatch.mins);
+      min = "0"+Stopwatch.mins;
     }
     if(Stopwatch.secs > 9){
-      sec = toString(Stopwatch.secs);
+      sec = Stopwatch.secs;
     } else {
-      sec = "0"+toString(Stopwatch.secs);
+      sec = "0"+Stopwatch.secs;
     }
     if(Stopwatch.millisecs > 90){
-      milsec = toString(Stopwatch.millisecs);
+      milsec = Stopwatch.millisecs;
     } else {
-      milsec = "0"+toString(Stopwatch.millisecs);
+      milsec = "0"+Stopwatch.millisecs;
     }
     var newLap = min+":"+sec+":"+milsec;
     console.log(newLap);
+    ViewEngine.updateLapListDisplay(newLap);
   }
 };
 
@@ -99,8 +100,8 @@ const ViewEngine = {
   updateLapListDisplay: function(laps){
     $newLi = $("<li>");
     $newLi.addClass("lap");
-    $newLi.html("<span id='mins'>00</span>:<span id='secs'>00</span>:<span id='millisecs'>000</span>");
-    $("lap-list").append($newLi);
+    $newLi.html(laps);
+    $("#lap-list").append($newLi);
   },
 };
 const ViewHelpers = {
