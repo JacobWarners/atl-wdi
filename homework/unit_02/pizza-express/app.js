@@ -2,18 +2,23 @@ const express = require('express');
 const hbs = require('hbs');
 
 var app = express();
-app.set("view engine", "views");
+app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-    res.send("Welcome to Pizza Express!");
+    res.render("index");
 });
 
 app.get("/topping/:type", (req, res) => {
-    res.send(`${req.params.type} pizza! Good choice!`);
+    res.render("toppings", {
+        topping: req.params.type
+    });
 });
 
 app.get("/order/:amount/:size", (req, res) => {
-    res.send(`Your order of ${req.params.amount} ${req.params.size} pizza(s) will be ready in a moment!`);
+    res.render("order", {
+        amount: req.params.amount,
+        size: req.params.size
+    });
 });
 
 var port = process.env.PORT || 3000;
