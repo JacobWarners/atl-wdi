@@ -21,6 +21,19 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.post('/', (res, req) => {
+    var newPirate = {
+        name: body.req.name,
+        birthplace: body.req.birthplace,
+        death_year: body.req.death_year,
+        base: body.req.base,
+        nickname: body.req.nickname
+    }
+
+    pirates.push(newPirate);
+    res.redirect("/pirates");
+})
+
 
 
 module.exports = router;
