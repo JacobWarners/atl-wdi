@@ -21,13 +21,13 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post('/', (res, req) => {
+router.post('/', (req, res) => {
     var newPirate = {
-        name: body.req.name,
-        birthplace: body.req.birthplace,
-        death_year: body.req.death_year,
-        base: body.req.base,
-        nickname: body.req.nickname
+        name: req.body.name,
+        birthplace: req.body.birthplace,
+        death_year: req.body.death_year,
+        base: req.body.base,
+        nickname: req.body.nickname
     }
 
     pirates.push(newPirate);
