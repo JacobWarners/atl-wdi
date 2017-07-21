@@ -1,1 +1,15 @@
-{{body}}
+<h1>Famous Pirates of the high seas!</h1>
+<a href="priates/new">Add another scourge of the seas</a>
+
+<ul>
+    {{#each pirates}}
+        <li>name: <a href="/pirates/{{@index}}">{{pirates.name}}</a></li>
+        <li>birthplace: {{pirates.birthplace}}</li>
+        <li>death year: {{pirates.death_year}}</li>
+        <li>base: {{pirates.base}}</li>
+        <li>nickname: {{pirates.nickname}}</li>
+        <br>
+    {{/each}}
+<ul>
+
+<h3>Arrrrh!</h3>
