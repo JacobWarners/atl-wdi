@@ -1,15 +1,10 @@
 const express = require('express');
 const router = express.Router();
-var pirates = require('../models/pirates.js');
+var data = require("../recipes.js");
 
 router.get("/", (req, res) => {
-    res.render("index")
+    res.render("/recipes/index", {
+        recipes: data.seededRecipes
+    });
 });
-
-router.get("/:id", (req, res) => {
-
-});
-
-
-
 module.exports = router;

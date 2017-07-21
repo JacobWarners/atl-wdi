@@ -1,8 +1,11 @@
 <h1> Todos </h1>
+<h3>You have {{todos.length}} things to do.</h3>
 <ul>
   {{#each todos}}
-    <li>Description: {{description}}</li>
+    <li>Description: <a href="/todos/{{@index}}">{{description}}</a></li>
     <li>Urgent: {{urgent}}</li>
     <br>
   {{/each}}
 </ul>
+
+<a href="./new/">Add a new item</a>
