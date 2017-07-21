@@ -6,6 +6,7 @@ var app = express();
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var hbs = require('hbs');
+var methodOverride = require('method-override');
 
 
 //===========================
@@ -13,6 +14,8 @@ var hbs = require('hbs');
 //===========================
 //this is for morgan
 app.use(logger("dev"));
+//add in method override
+app.use(methodOverride('_method'));
 //these are for bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

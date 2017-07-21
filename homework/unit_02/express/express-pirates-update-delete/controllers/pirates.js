@@ -37,15 +37,35 @@ router.get('/:id', function(req, res){
 //==============================
 // CREATE
 //==============================
+router.post('/', (req, res) => {
+	var newPirate = {
+		name: req.body.name,
+		birthplace: req.body.birthplace,
+		death_year: req.body.death_year,
+		base: req.body.base,
+		nickname: req.body.nickname
+	}
+	pirates.push(newPirate);
 
+	res.redirect("/pirates/")
+});
 //==============================
 // UPDATE
 //==============================
+router.put("/:id", (req, res) => {
+	var id = req.params.id;
+	
+});
 
 //==============================
 // DESTROY
 //==============================
+router.delete('/:id', (req, res) => {
+	var id = req.params.id;
+	pirates.splice(id, 1);
 
+	res.redirect("/pirates");
+})
 //==============================
 // EXPORTS
 //==============================
