@@ -11,8 +11,9 @@ const piratesController = require('./controllers/pirates');
 
 app.use( logger('dev'));
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
 }));
+app.use(bodyParser.json());
 app.use('/pirates/', piratesController);
 
 var port = process.env.PORT || 3000;
