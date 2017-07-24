@@ -29,10 +29,18 @@ router.get('/:id', function(req, res){
 	var showPirate = pirates[req.params.id];
 
 	res.render("pirates/show.hbs", {
-		pirate: showPirate
+		pirate: showPirate,
+		id: req.params.id
 	});
 });
 
+router.get('/:id/edit', (req, res) => {
+	var editPirate = pirates[req.params.id];
+	res.render("pirates/edit.hbs", {
+		pirate: editPirate,
+		id: req.params.id
+	})
+})
 
 //==============================
 // CREATE
@@ -47,14 +55,20 @@ router.post('/', (req, res) => {
 	}
 	pirates.push(newPirate);
 
-	res.redirect("/pirates/")
+	res.redirect("/pirates")
 });
 //==============================
 // UPDATE
 //==============================
 router.put("/:id", (req, res) => {
 	var id = req.params.id;
-	
+	pirates[id].name = req.body.name;
+	pirates[id].birthplace = req.body.birthplace;
+	pirates[id].death_year = req.body.death_year;
+	pirates[id].base = req.body.base;
+	pirates[id].nickname = req.body.nickname;
+
+	res.redirect("/pirates");
 });
 
 //==============================
