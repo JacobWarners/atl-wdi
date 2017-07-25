@@ -13,6 +13,14 @@ class Tamagotchi {
         this.foodInTummy -= 1;
         console.log(`${this.name} cries.. WAHH!`);
     }
+    puke() {
+        this.foodInTummy -= 1;
+        console.log(`${this.name} pukes.. ugh, so gross!`);
+    }
+    yawn() {
+        this.restedness -= 1;
+        console.log(`${this.name} yawns.. so cute! Restedness: ${this.restedness}`);
+    }
 }
 
 //create new Tamagotchis
@@ -26,3 +34,7 @@ cecil.cry();
 rosa.cry();
 kain.cry();
 edge.cry();
+edge.puke();
+kain.yawn();
+rosa.cry();
+cecil.yawn();
