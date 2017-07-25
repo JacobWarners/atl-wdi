@@ -21,6 +21,20 @@ class Tamagotchi {
         this.restedness -= 1;
         console.log(`${this.name} yawns.. so cute! Restedness: ${this.restedness}`);
     }
+    hungerTimer() {
+        setInterval(() => {this.cry()}, 6000);
+    }
+    yawnTimer() {
+        setInterval(() => {this.yawn()}, 10000);
+    }
+    sickTimer() {
+        setInterval(() => {this.puke()}, 24000);
+    }
+    start() {
+            this.hungerTimer();
+            this.yawnTimer();
+            this.sickTimer();
+    }
 }
 
 //create new Tamagotchis
@@ -38,3 +52,7 @@ edge.puke();
 kain.yawn();
 rosa.cry();
 cecil.yawn();
+cecil.start();
+rosa.start();
+kain.start();
+edge.start();
