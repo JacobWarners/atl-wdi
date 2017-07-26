@@ -79,19 +79,74 @@ var ExampleStation = {
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
 ```
-Write your answer here or in a separate js file.
+var ExampleRockBandAppUser = {
+  name: name,
+  password: password,
+  credit cards: [{
+    card_number: 198347092347502938475
+    cid: 123
+    expiration_date: 1234
+  }]
+  bands:[{
+    name: "Death Clock",
+    concerts: [{
+      venue: venue,
+      date: date,
+      ticket_price: money,
+      ticket_puchase: true
+    }]
+  }]
+}
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
 
+```
+coffee shop{
+  name: name,
+  address:
+  city: 
+  state:
+  zip:
+  phone number:
+  website:
+  email:
+  drinks: {[
+    drink123
+  ]}
+}
+
+user{
+  name
+  cart: {
+    items
+  }
+  favorite drinks {
+
+  }
+
+}
+```
+
 ### 5. Team Tracker App
 
 This app shows you all the latest stats from your favorite sports teams. You can view individual player stats and full team stats.
 
 ```
-Write your answer here or in a separate js file.
+team{
+  name
+  coach
+  assistant coach
+  players[{
+    playername
+    role
+    score
+    fouls
+    
+  }]
+}
 ```
 
 
