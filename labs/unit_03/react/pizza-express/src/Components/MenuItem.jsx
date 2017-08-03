@@ -6,9 +6,9 @@ class MenuItem extends Component {
             <div className="menu-item">
                  <img src={this.props.data.image} />
                  <div className="menu-description">
-                     <div className="menu-item-name">{this.props.data.name}</div>
+                    <div className="menu-item-name">{this.props.data.name}</div>
                     <div>Price: {this.props.data.price}</div>
-                     <div>{this.props.data.description}</div>
+                    <div>{this.props.data.description}</div>
                 </div>
             </div>
         );
