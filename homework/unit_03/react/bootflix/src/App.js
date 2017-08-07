@@ -13,20 +13,25 @@ class App extends Component {
   }
 
   //Update these methods to make axios calls to OMDB and update this.state.movie with the response from the server
-  _searchByTitle = () => {
+  _searchByTitle = (event) => {
     console.log("Search by Title");
+    
   }
 
-  _searchById = () => {
+  _searchById = (event) => {
     console.log("Search by ID");
   }
 
   //Pass _searchByTitle, _searchById, and this.state.movie to it's appropriate child components.
   render() {
+
     return (
       <div className="App">
         <Header />
-        <Search />
+        <Search 
+          searchByTitle = {this._searchByTitle()}
+          searchById = {this._searchById()}
+          />
         <Movie />
       </div>
     );
