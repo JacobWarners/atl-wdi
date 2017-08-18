@@ -43,7 +43,7 @@ not cover in class.
 8.  The names and positions of players with a salary above 10_000_000
 
 <hr>
-&#x1F534; COMMIT 3<br>
+&#x1F534;SEq COMMIT 3<br>
 "Commit: NFL - wow there's a lot of nfl data"
 <hr>
 
