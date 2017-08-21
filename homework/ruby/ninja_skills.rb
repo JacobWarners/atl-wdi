@@ -33,3 +33,9 @@ puts "#{christine} and I like #{likesTo}"
 g = "2"
 gToNumber = 2
 puts g.to_i + gToNumber
+
+puts "What is your name?"
+name = gets.chomp
+puts "What do you like to do?"
+activity = gets.chomp
+puts "Your name is #{name} and you like to #{activity}"
