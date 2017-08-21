@@ -12,3 +12,8 @@ else
     puts false
 end
 
+nilvar = nil
+puts nilvar
+puts "#{nilvar} was here"
+print nilvar
+puts nilvar.class
