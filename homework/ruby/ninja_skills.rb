@@ -48,3 +48,17 @@ myFirstArray[1] = "Joe"
 myFirstArray[2] = 3
 myFirstArray << "true"
 puts myFirstArray[3].class
+
+myFavoriteAnimals = {
+    edgar: "donkey",
+    liam: "cat",
+    greg: "zebra",
+    charles: "cheeta",
+    sally: "seal",
+}
+
+myFavoriteAnimals[:edgar] = "Bear"
+favoriteMovie = {}
+favoriteMovie[:movie] = "emporers new groove"
+
+
